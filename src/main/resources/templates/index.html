@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Credit Direct</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+</head>
+<body>
+<main role="main" class="container">
+
+    <div class="starter-template">
+        <h1>Credit Direct<br/>Building the American Dream</h1>
+        <h2>What are your credit concerns?</h2>
+        <form th:action="@{/}" method="post">
+            <fieldset>
+                <div class="form-group">
+                    <input type="text" name="prompt" th:value="${request}" required autofocus/>
+                </div>
+                <div class="row">
+                    <input type="submit" value="Send" />
+                </div>
+            </fieldset>
+        </form>
+        <h2 th:if="${response != null}" >Here are some tips: </h2>
+        <p th:if="${response != null}" th:text="${response}" />
+       <div class="cardContainer">
+         <div class="card">
+             Credit Report
+<!--               <img src="/Users/student24/dev/spring-projects/chatgptdemo/src/main/resources/photos/money and credit.jpeg" alt="Credit Report" />-->
+         </div>
+            <div class="card">
+                Credit Mix
+            </div>
+                <div class="card">
+                    Credit Health
+                </div>
+    </div>
+    </div>
+</main>
+</body>
+</html>
